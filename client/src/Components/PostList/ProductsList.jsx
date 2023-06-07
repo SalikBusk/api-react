@@ -36,7 +36,9 @@ const Products = ({ item }) => {
         <figcaption className="p-2 flex flex-col gap-[10px]">
           <header>
             <h2 className="text-[18px] fron-bold">{title}</h2>
-            <StarRating rating={rating} />
+            <div className="flex flex-row items-center gap-[2px] text-[12px]">
+              <StarRating rating={rating} /> {rating}
+            </div>
           </header>
           <hgroup className="flex flex-row justify-between">
             <p className="text-[24px] font-bold flex flex-row gap-2 text-black">{roundedDiscountedPrice} $</p>
