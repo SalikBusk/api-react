@@ -4,6 +4,9 @@ import Container from "../Components/Container";
 import { useFetch } from "../Hooks/useFetch";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 
+import Skeleton from "react-loading-skeleton";
+import "react-loading-skeleton/dist/skeleton.css";
+
 const ProductPage = () => {
   const { id } = useParams();
 
@@ -12,9 +15,28 @@ const ProductPage = () => {
 
   if (loading) {
     return (
-        <div>
-
-        </div>
+      <div>
+        <Container>
+          <section className="w-full h-[80vh] rounded-[10px] p-2 grid grid-cols-2 gap-[20px]">
+            <Skeleton width={`100%`} height={`80vh`}/>
+            <header className="flex flex-col gap-5">
+              <div className="flex flex-col justify-start gap-4">
+                <Skeleton height={`4vh`}/>
+                <div>
+                  <Skeleton/>
+                </div>
+                <hr />
+              </div>
+              <div className="flex flex-col gap-5">
+                <p className="font-neutral-500 font-light text-sm">
+                  <Skeleton count={10}/>
+                </p>
+                <Skeleton/>
+              </div>
+            </header>
+          </section>
+        </Container>
+      </div>
     );
   }
 
@@ -34,16 +56,21 @@ const ProductPage = () => {
           <header className="flex flex-col gap-5">
             <div className="flex flex-col justify-start gap-4">
               <h1 className="text-4xl font-bold">{apiData.title}</h1>
-              <div className="text-black text-sm bg-[#DDCEF2] rounded-full p-2" style={{ width: "fit-content" }}>
+              <div
+                className="text-black text-sm bg-[#DDCEF2] rounded-full p-2"
+                style={{ width: "fit-content" }}
+              >
                 ${apiData.price}
               </div>
               <hr />
             </div>
             <div className="flex flex-col gap-5">
-                <p className="font-neutral-500 font-light text-sm">{apiData.description}</p>
-                <button className="w-full py-4 bg-[#DDCEF2] rounded-full font-smibold hover:border-[1px] border-neutral-100">
-                    Tilføj til kurv 
-                </button>
+              <p className="font-neutral-500 font-light text-sm">
+                {apiData.description}
+              </p>
+              <button className="w-full py-4 bg-[#DDCEF2] rounded-full font-smibold hover:border-[1px] border-neutral-100">
+                Tilføj til kurv
+              </button>
             </div>
           </header>
         </section>
