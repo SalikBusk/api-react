@@ -1,15 +1,21 @@
 import React from 'react'
-import { Container } from '../wappers/Section'
+import Container from '../Container'
+import Cart from './Cart'
+import Logo from './Logo'
+import UserMenu from './UserMenu'
 
 const Navbar = () => {
   return (
-    <div>
-        <Container>
-            <nav className='flex flex-row items-center justify-between p-2'>
-                <div>logo</div>
-                <div>nav</div>
-            </nav>
-        </Container>
+    <div className='z-[999]'>
+      <Container>
+        <nav className='flex flex-row justify-between item-center pt-2'>
+          <Logo/>
+          <div className='flex flex-row gap-5 items-center'>
+            <UserMenu/>
+            <Cart/>
+          </div>
+        </nav>
+      </Container>
     </div>
   )
 }
