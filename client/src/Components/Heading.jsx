@@ -1,19 +1,14 @@
 import React from "react";
 
-export const Heading = ({ title, subtitle }) => {
+const Heading = ({ title, number }) => {
   return (
-    <div>
-      <div className="font-bold text-5xl">{title}</div>
-      <div className="font-neutral-500 font-light mt-2 text-2xl">{subtitle}</div>
-    </div>
+    <div className="flex flex-row gap-2 items-center">
+        <div className="text-[10px] border-[1px] w-4 h-4 border-black rounded-full p-1 flex flex-col items-center justify-center">
+          {number}
+        </div>
+        <p className="text-[12px] font-bold text-black">{title}</p>
+      </div>
   );
 };
 
-export const Head = ({ title, subtitle }) => {
-  return (
-    <div>
-      <div className="font-neutral-500 font-light text-xl">{subtitle}</div>
-      <div className="font-smibold text-3xl mt-2">{title}</div>
-    </div>
-  );
-};
+export default Heading

@@ -10,6 +10,7 @@ import Navbar from './Components/Navbar/Navbar';
 import ProductPage from './pages/ProductPage';
 import Menu from './Components/Cart/Menu';
 import ShopPage from './pages/ShopPage';
+import { CartProvider } from './Hooks/useCart';
 
 const Layout = () => {
   return (
@@ -35,7 +36,7 @@ const router = createBrowserRouter([
         element: <ShopPage/>,
       },
       {
-        path: "/product/:id",
+        path: "shop/product/:id",
         element: <ProductPage/>,
       },
     ]
@@ -46,7 +47,9 @@ const router = createBrowserRouter([
 function App() {
   return (
     <div className="App">
-      <RouterProvider router={router}/>
+      <CartProvider>
+        <RouterProvider router={router}/>
+      </CartProvider>
     </div>
   );
 }

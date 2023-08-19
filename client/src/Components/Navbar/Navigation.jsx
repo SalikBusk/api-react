@@ -8,7 +8,7 @@ const Navigation = () => {
 
   return (
     <nav>
-      <ul className="flex flex-row items-center gap-1">
+      <ul className="flex flex-row items-center gap-5">
         <MenuItem
           label="Shop"
           onClick={() => navigate("/shop")}

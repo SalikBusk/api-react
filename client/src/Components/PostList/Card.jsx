@@ -2,7 +2,7 @@ import React from "react";
 
 import {Link} from 'react-router-dom';
 
-const Card = ({ item, big, small }) => {
+export const Card = ({ item, big, small }) => {
   const { image, title, description, price, id } = item;
 
   //  {title.length > 10 ? title.slice(0, 10) + "..." : title}
@@ -43,4 +43,29 @@ const Card = ({ item, big, small }) => {
   );
 };
 
-export default Card;
+export const SmallCard = ({ item }) => {
+    const { image, description, title, price, id } = item;
+    return (
+      <Link
+        to={`product/${id}`}
+        className="flex flex-col overflow-hidden h-[45vh] border-[1px] rounded-lg border-gray-200 p-2 relative cursor-pointer group"
+      >
+        <img
+          className="w-full max-h-64 object-contain"
+          src={image}
+          alt={description}
+        />
+        <div className="absolute h-full w-full hidden group-hover:flex flex-row items-center justify-center">
+          <button className="border-[1px] px-[30px] py-[5px] rounded-full bg-white">
+            Shop
+          </button>
+        </div>
+        <div className="flex flex-col pt-5 absolute bottom-3">
+          <h3 className="text-[12px] font-[400] text-black mb-1">
+            {item.title.length > 25 ? title.slice(0, 25) + "..." : title}
+          </h3>
+          <p className="text-[12px] font-[400] text-black">${price}</p>
+        </div>
+      </Link>
+    );
+  };

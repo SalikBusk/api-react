@@ -9,7 +9,7 @@ const MenuItem = ({ label, onClick, isActive }) => {
       onClick={onClick}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      className={`px-4 py-3 transition duration-50 cursor-pointer hover:font-medium group text-[12px] font-medium ${
+      className={`transition duration-50 cursor-pointer hover:font-medium group text-[12px] font-medium ${
         isActive ? "flex flex-row items-center transition  duration-75 ease-in-out" : ""
       } ${
         setIsHovered ? "flex flex-row items-center transition duration-75 ease-in-out" : ""
