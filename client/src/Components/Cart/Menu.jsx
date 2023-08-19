@@ -7,7 +7,7 @@ const Menu = () => {
 
     const BodyContent = (
       <div>
-        <p>This is the content of the modal.</p>
+        <p>Product here</p>
       </div>
     )
   return (
@@ -16,7 +16,7 @@ const Menu = () => {
         isOpen={menu.isOpen}
         onClose={menu.onClose}
         onSubmit={() => {}}
-        title="Menu"
+        title="Cart"
         body={BodyContent}
         actionLabel="Submit"
       />

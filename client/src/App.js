@@ -7,8 +7,9 @@ import {
 } from "react-router-dom";
 import HomePage from './pages/HomePage';
 import Navbar from './Components/Navbar/Navbar';
-import Menu from './Components/Navbar/Menu';
 import ProductPage from './pages/ProductPage';
+import Menu from './Components/Cart/Menu';
+import ShopPage from './pages/ShopPage';
 
 const Layout = () => {
   return (
@@ -30,9 +31,13 @@ const router = createBrowserRouter([
         element: <HomePage/>,
       },
       {
+        path: "/shop",
+        element: <ShopPage/>,
+      },
+      {
         path: "/product/:id",
         element: <ProductPage/>,
-      }
+      },
     ]
   }
 ])

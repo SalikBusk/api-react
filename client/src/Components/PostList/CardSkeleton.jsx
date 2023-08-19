@@ -3,14 +3,14 @@ import Skeleton from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css';
 
 
-const CardSkeleton = ({ cards }) => {
+const CardSkeleton = ({ cards, grid, gap, height }) => {
   return (
-    <div className='grid grid-cols-4 gap-[10px]'>
+    <div className={`grid grid-cols-${grid} gap-${gap}`}>
       {Array(cards)
         .fill(0)
         .map((item, index) => (
           <figure key={index} >
-            <Skeleton width={`100%`} height={`38vh`} />
+            <Skeleton width={`100%`} height={height} />
           </figure>
         ))}
     </div>
