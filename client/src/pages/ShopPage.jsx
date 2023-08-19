@@ -28,10 +28,10 @@ const ShopPage = () => {
     return (
       <Link
         to={`product/${item.id}`}
-        className="flex flex-col overflow-hidden h-[40vh] border-[1px] rounded-lg border-gray-200 p-2 relative cursor-pointer group"
+        className="flex flex-col overflow-hidden h-[45vh] border-[1px] rounded-lg border-gray-200 p-2 relative cursor-pointer group"
       >
         <img
-          className="w-full max-h-56 object-contain"
+          className="w-full max-h-64 object-contain"
           src={image}
           alt={description}
         />

@@ -7,6 +7,7 @@ const Logo = () => {
   return (
     <div>
       <svg
+      className="cursor-pointer"
         onClick={handleClick}
         width="135"
         height="28"
